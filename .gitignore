@@ -1,2 +1,7 @@
 /backend/Livraria/.vs
 /backend/Livraria/obj
+/backend/src/LivrariaSolution/Livraria.Application/bin
+/backend/src/LivrariaSolution/Livraria.Infrastructure/bin
+/backend/src/LivrariaSolution/Livraria/bin
+/backend/src/LivrariaSolution/LivrariaDomain/bin
+backend/src/LivrariaSolution/Livraria/logs/app-log.txt

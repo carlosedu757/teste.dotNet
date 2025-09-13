@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "http": {
+    "Livraria http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -19,7 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "https": {
+    "Livraria https": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
