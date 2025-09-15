@@ -22,14 +22,14 @@ namespace Livraria.Domain.ExcMsg {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class DomainExcMsg {
+    public class DomainExcMsg {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal DomainExcMsg() {
+        public DomainExcMsg() {
         }
         
         /// <summary>
@@ -63,7 +63,7 @@ namespace Livraria.Domain.ExcMsg {
         /// <summary>
         ///   Looks up a localized string similar to Insira um {0} válido..
         /// </summary>
-        internal static string EXC0001 {
+        public static string EXC0001 {
             get {
                 return ResourceManager.GetString("EXC0001", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Livraria.Domain.ExcMsg {
         /// <summary>
         ///   Looks up a localized string similar to O ano de publicação inserido é inválido..
         /// </summary>
-        internal static string EXC0002 {
+        public static string EXC0002 {
             get {
                 return ResourceManager.GetString("EXC0002", resourceCulture);
             }

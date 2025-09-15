@@ -14,3 +14,5 @@ backend/src/LivrariaSolution/Livraria/logs/app-log.txt
 /frontend/.vscode
 /backend/src/LivrariaSolution/Livraria.Application.Tests/obj
 /backend/src/LivrariaSolution/Livraria.Domain.Tests/obj
+/backend/src/LivrariaSolution/Livraria.Application.Tests/bin
+/backend/src/LivrariaSolution/Livraria.Domain.Tests/bin
