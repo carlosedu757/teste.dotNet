@@ -69,14 +69,14 @@ Para ajudar a livraria foi solicitado a você desenvolver uma aplicação web pa
 
 Antes de começar, garanta que você tem as seguintes ferramentas instaladas na sua máquina:
 * [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-* [SQL Server 2014](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads) ou superior (Express, Developer ou outra edição)
-* [Visual Studio 2022](https://visualstudio.microsoft.com/pt-br/vs/) (Recomendado) ou VS Code com C# Dev Kit.
+* [SQL Server 2014](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads) ou superior
+* [Visual Studio 2022](https://visualstudio.microsoft.com/pt-br/vs/) ou VS Code com C# Dev Kit.
 * [Node.js](https://nodejs.org/en/) (Versão LTS 18.x ou 20.x recomendada)
 * [Angular CLI](https://angular.io/cli) instalado globalmente (`npm install -g @angular/cli`)
 
 ## Como Executar o Projeto
 
-O projeto está dividido em duas pastas: `backend` e `frontend` (ou `livraria-app`). Siga os passos abaixo em ordem.
+O projeto está dividido em duas pastas: `backend` e `frontend`. Siga os passos abaixo em ordem.
 
 ### 1. Backend (.NET Core API)
 
@@ -89,21 +89,20 @@ A API é o cérebro da aplicação e precisa estar rodando para que o frontend f
         ```sh
         dotnet ef database update
         ```
-    * *Observação: O banco de dados já deve ser populado com dois usuários (`admin` e `cliente`) através das migrations ou um método de Seed.*
 
 2.  **Executar a API:**
     * Abra o arquivo de solução (`.sln`) no Visual Studio 2022.
-    * Pressione **F5** ou clique no botão de "Iniciar" (com o perfil HTTPS) para executar a aplicação.
-    * Uma janela do navegador abrirá com a interface do Swagger, geralmente em uma URL como `https://localhost:7123`. Anote essa URL base, pois você precisará dela para o frontend.
+    * Pressione **F5** ou clique no botão de "Iniciar" (com o perfil HTTP) para executar a aplicação.
+    * Uma janela do navegador abrirá com a interface do Swagger, geralmente em uma URL que será necessário usar, pois você precisará dela para o frontend.
 
 ### 2. Frontend (Angular)
 
 Com a API rodando, agora podemos iniciar a interface do usuário.
 
 1.  **Configurar a URL da API:**
-    * Navegue até a pasta do frontend (`livraria-app`).
+    * Navegue até a pasta do frontend.
     * Abra os arquivos de serviço: `src/app/services/auth.service.ts` e `src/app/services/book.service.ts`.
-    * Verifique se a variável `private apiUrl` em ambos os arquivos corresponde **exatamente** à URL base em que sua API está rodando (ex: `https://localhost:7123/api/books`).
+    * Verifique se a variável `private apiUrl` em ambos os arquivos corresponde **exatamente** à URL base em que sua API está rodando.
 
 2.  **Instalar Dependências:**
     * Abra um **novo terminal** na pasta do frontend.
@@ -121,12 +120,7 @@ Com a API rodando, agora podemos iniciar a interface do usuário.
 
 ## Credenciais de Teste
 
-A aplicação possui dois níveis de acesso. Use as seguintes credenciais para testar:
-
-| Cargo         | Usuário | Senha             | Permissões                                                     |
-|---------------|---------|-------------------|----------------------------------------------------------------|
-| **Administrador** | `admin` | *[informe a senha]* | Visualiza, Cria, Edita e Exclui livros.                         |
-| **Público** | `cliente` | *[informe a senha]* | Apenas visualiza a lista de livros cadastrados. |
+A aplicação possui dois níveis de acesso. Utilize a tela de registro para registrar um usuário administrador e outro público.
 
 ## Funcionalidades Implementadas
 
