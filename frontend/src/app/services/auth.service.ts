@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
@@ -10,7 +11,10 @@ export class AuthService {
   private loginUrl = 'http://localhost:5239/api/auth/login';
   private registerUrl = 'http://localhost:5239/api/auth/register';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
 
   register(userInfo: any): Observable<any> {
     return this.http.post(this.registerUrl, userInfo);
@@ -19,7 +23,7 @@ export class AuthService {
   login(credentials: any): Observable<any> {
     return this.http.post<any>(this.loginUrl, credentials).pipe(
       tap(response => {
-        if (response && response.token) {
+        if (isPlatformBrowser(this.platformId) && response && response.token) {
           localStorage.setItem('authToken', response.token);
         }
       })
@@ -27,15 +31,23 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('authToken');
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem('authToken');
+    }
   }
 
   getToken(): string | null {
-    return localStorage.getItem('authToken');
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('authToken');
+    }
+    return null;
   }
 
   isLoggedIn(): boolean {
-    return this.getToken() !== null;
+    if (isPlatformBrowser(this.platformId)) {
+      return this.getToken() !== null;
+    }
+    return false;
   }
 
   isAdmin(): boolean {
